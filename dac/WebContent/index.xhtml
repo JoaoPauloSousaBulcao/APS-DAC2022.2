@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<h:head><title>Cadastro do Jogo</title></h:head>
+	<h:body>
+		<h:form id="formulario">
+			<p:panel header="Cadastro de Jogada">
+				<p:messages id="messages" showDetail="true" closable="true">
+	            	<p:autoUpdate/>
+	        	</p:messages>
+				<p:panelGrid columns="2">
+					<p:outputLabel value="V1" for="v1"/>
+					<p:inputText value="#{jogoBean.jogo.v1}" id="v1"/>
+					
+					<p:outputLabel value="V2" for="v2"/>
+					<p:inputText value="#{jogoBean.jogo.v2}" id="v2"/>
+					
+					<p:outputLabel value="V3" for="v3"/>
+					<p:inputText value="#{jogoBean.jogo.v3}" id="v3"/>
+					
+					<p:outputLabel value="V4" for="v4"/>
+					<p:inputText value="#{jogoBean.jogo.v4}" id="v4"/>
+					
+					<p:outputLabel value="V5" for="v5"/>
+					<p:inputText value="#{jogoBean.jogo.v5}" id="v5"/>
+					
+					
+					
+					<p:outputLabel value="Data do Jogo" for="data"/>
+					<p:datePicker id="data" value="#{jogoBean.jogo.dataJogo}" showTime="true"/>
+					
+					
+					
+					<p:commandButton value="Salvar" action="#{jogoBean.salvar}" update="formulario"/>
+					<p:link outcome="listagem" value="Listar"/>
+				</p:panelGrid>
+			</p:panel>
+		</h:form>
+	</h:body>
+</html>
